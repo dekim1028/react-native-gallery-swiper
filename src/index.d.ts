@@ -1,4 +1,4 @@
-declare module "@ericedouard/react-native-gallery-swiper" {
+declare module "@daeun2351/react-native-gallery-swiper" {
   import { Component } from "react";
   import {
     FlatListProps,
