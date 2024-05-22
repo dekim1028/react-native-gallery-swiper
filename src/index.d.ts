@@ -51,7 +51,6 @@ declare module "@daeun2351/react-native-gallery-swiper" {
     style?: ViewStyle;
     initialPage?: number;
     resizeMode?: ImageResizeMode;
-    initialNumToRender?: number;
     scrollViewStyle?: ViewStyle;
     pageMargin?: number;
     sensitiveScroll?: boolean;
@@ -98,6 +97,9 @@ declare module "@daeun2351/react-native-gallery-swiper" {
     errorComponent?: () => JSX.Element;
     flatListProps?: FlatListProps<any>;
     refPage?: (galleryViewPager: PageList) => void;
+    pageTransitionThreshold: number;
+    estimatedItemSize: number;
+    drawDistance: number;
   };
 
   export default class GallerySwiper extends Component<GallerySwiperProps> {}

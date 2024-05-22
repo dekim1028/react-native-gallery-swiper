@@ -10,6 +10,7 @@ const DEFAULT_FLAT_LIST_PROPS = {
 };
 
 const height = Dimensions.get("screen").height;
+const width = Dimensions.get("screen").width;
 
 export default class GallerySwiper extends PureComponent {
   static propTypes = {
@@ -61,6 +62,9 @@ export default class GallerySwiper extends PureComponent {
     errorComponent: PropTypes.func,
     flatListProps: PropTypes.object,
     refPage: PropTypes.func,
+    pageTransitionThreshold: PropTypes.number,
+    estimatedItemSize: PropTypes.number,
+    drawDistance: PropTypes.number,
   };
 
   static defaultProps = {
@@ -73,6 +77,8 @@ export default class GallerySwiper extends PureComponent {
     scrollViewStyle: {},
     flatListProps: DEFAULT_FLAT_LIST_PROPS,
     onEndReachedThreshold: 0.5,
+    pageTransitionThreshold: 1 / 3,
+    drawDistance: width * 7,
   };
 
   imageRefs = new Map();
@@ -452,8 +458,10 @@ export default class GallerySwiper extends PureComponent {
         onPageScrollStateChanged={this.onPageScrollStateChanged}
         onPageScroll={this.props.onPageScroll}
         removeClippedSubviews={this.props.removeClippedSubviews}
-        initialNumToRender={this.props.initialNumToRender}
         backgroundColor={this.props.backgroundColor}
+        pageTransitionThreshold={this.props.pageTransitionThreshold}
+        estimatedItemSize={this.props.estimatedItemSize}
+        drawDistance={this.props.drawDistance}
       />
     );
   }
