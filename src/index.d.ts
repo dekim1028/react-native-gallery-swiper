@@ -100,6 +100,7 @@ declare module "@daeun2351/react-native-gallery-swiper" {
     pageTransitionThreshold: number;
     estimatedItemSize: number;
     drawDistance: number;
+    enableFastList?: boolean;
   };
 
   export default class GallerySwiper extends Component<GallerySwiperProps> {}
