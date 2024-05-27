@@ -65,7 +65,7 @@ export default class GallerySwiper extends PureComponent {
     pageTransitionThreshold: PropTypes.number,
     estimatedItemSize: PropTypes.number,
     drawDistance: PropTypes.number,
-    enableFastList: PropTypes.bool,
+    enableFlatList: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -80,7 +80,7 @@ export default class GallerySwiper extends PureComponent {
     onEndReachedThreshold: 0.5,
     pageTransitionThreshold: 1 / 3,
     drawDistance: width * 7,
-    enableFastList: true,
+    enableFlatList: true,
   };
 
   imageRefs = new Map();
@@ -464,7 +464,7 @@ export default class GallerySwiper extends PureComponent {
         pageTransitionThreshold={this.props.pageTransitionThreshold}
         estimatedItemSize={this.props.estimatedItemSize}
         drawDistance={this.props.drawDistance}
-        enableFastList={this.props.enableFastList}
+        enableFlatList={this.props.enableFlatList}
       />
     );
   }
