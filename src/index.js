@@ -211,13 +211,18 @@ export default class GallerySwiper extends PureComponent {
       },
       onMove: (evt, gestureState) => {
         const currentImageTransformer = this.getCurrentImageTransformer();
-        this._galleryViewPager &&
-          this._galleryViewPager.setFade(
-            1 -
-              (Math.abs(currentImageTransformer.state.translateY) / height) * 1
-          );
-        currentImageTransformer &&
-          currentImageTransformer.onResponderMove(evt, gestureState);
+
+        if (currentImageTransformer) {
+          this._galleryViewPager &&
+            this._galleryViewPager.setFade(
+              1 -
+                (Math.abs(currentImageTransformer.state.translateY) / height) *
+                  1
+            );
+          currentImageTransformer &&
+            currentImageTransformer.onResponderMove(evt, gestureState);
+        }
+
         clearTimeout(this._longPressTimeout);
       },
       onEnd: (evt, gestureState) => {
