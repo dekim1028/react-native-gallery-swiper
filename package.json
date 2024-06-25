@@ -55,7 +55,7 @@
   ],
   "dependencies": {
     "@daeun2351/react-native-image-transformer": "^1.5.7",
-    "@daeun2351/react-native-page-list": "^1.5.1",
+    "@daeun2351/react-native-page-list": "^1.5.2",
     "prop-types": "^15.6.2",
     "react-native-easy-guesture-responder": "^1.1.3"
   },
